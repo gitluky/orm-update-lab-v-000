@@ -43,9 +43,8 @@ class Student
         VALUES (?,?)
       SQL
       DB[:conn].execute(sql, self.name, self.grade)
+      self.id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     end
-      DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
-
   end
 
 end
