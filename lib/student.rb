@@ -73,7 +73,7 @@ class Student
       WHERE name = ?
     SQL
     student_found = DB[:conn].execute(sql, name)
-
+    binding.pry
     Student.new_from_db(student_found)
 
   end
