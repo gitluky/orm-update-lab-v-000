@@ -55,7 +55,6 @@ class Student
     rows.map do |row|
       new_student = Student.create(row[1], row[2])
     end
-
   end
 
 
