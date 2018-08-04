@@ -14,7 +14,6 @@ class Student
 
   def create(name, grade)
     Student.new(name, grade)
-
   end
 
   def self.create_table
