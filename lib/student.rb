@@ -52,7 +52,9 @@ class Student
   end
 
   def self.new_from_db(rows)
-    new_student = Student.new
+    rows.map do |row|
+      new_student = Student.create(row[1], row[2])
+    end
 
   end
 
