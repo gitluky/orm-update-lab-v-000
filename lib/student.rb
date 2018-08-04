@@ -53,7 +53,7 @@ class Student
 
   def self.new_from_db(rows)
     Student.create(row[1], row[2])
-    
+
   end
 
   def self.find_by_name(name)
@@ -62,8 +62,9 @@ class Student
       WHERE name = ?
     SQL
     student_found = DB[:conn].execute(sql, name)
+
     Student.new_from_db(student_found)
-    
+
   end
 
 end
